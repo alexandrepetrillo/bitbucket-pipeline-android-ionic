@@ -12,6 +12,8 @@ RUN apt-get update && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
   apt-get purge -y --auto-remove $buildDeps && \
   apt-get autoremove -y && apt-get clean && \
+  apt-get clean && \
+  apt-get update -y && \
   apt install -y wget && \
   wget https://services.gradle.org/distributions/gradle-6.5.1-bin.zip -P /tmp && \
   apt-get install -y unzip && \
