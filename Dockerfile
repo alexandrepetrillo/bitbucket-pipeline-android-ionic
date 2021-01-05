@@ -18,7 +18,7 @@ RUN apt-get update && \
   wget https://services.gradle.org/distributions/gradle-6.5.1-bin.zip -P /tmp && \
   apt-get install -y unzip && \
   unzip -d /opt/gradle /tmp/gradle-6.5.1-bin.zip && \
-  ln -s /opt/gradle/gradle-6.5.1 /opt/gradle/latest && \
+  ln -s /opt/gradle/gradle-6.5.1 /opt/gradle/latest
 
 ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 ENV PATH $PATH:/opt/gradle/latest/bin
