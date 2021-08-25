@@ -14,8 +14,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Build the Docker image
-      run: docker build . -t alexandrepetrillo/bitbucket-pipeline-android-ionic:$(date +%s)
-    - name: Push the Docker image
-      run: docker push alexandrepetrillo/bitbucket-pipeline-android-ionic
-
+    - name: Build and push Docker image
+      uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+      with:
+        context: .
+        push: true
+        tags: $(date +%s)
